@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class Waypoints : MonoBehaviour
+public class NPCNavigationController : MonoBehaviour
 {
     [SerializeField] private Vector3 destination;
     [SerializeField] private float stopDistance;
