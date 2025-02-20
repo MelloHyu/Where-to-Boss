@@ -3533,46 +3533,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1109658739104303224, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1109658739104303224, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1109658739104303224, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962268510175196071, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962268510175196071, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962268510175196071, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962268510175196071, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962268510175196071, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962268510175196071, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962268510175196071, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 103.66
-      objectReference: {fileID: 0}
     - target: {fileID: 6011026916021135456, guid: 32c6a48ec5e4dbe44a2b30d77169f85c, type: 3}
       propertyPath: m_Name
       value: CarPlayer
