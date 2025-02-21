@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 731cc1e617a929843889e6760b5321e5, type: 3}
-  m_Name: SplitLine
+  m_Name: Road_Tile_Small
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_GameObject: {fileID: 100000, guid: 0ee37198b24b2164fbbccfbe92fe5d35, type: 3}
+  - m_GameObject: {fileID: 100000, guid: a1eb827aa0413ab4a8b3b08c0e1a8c56, type: 3}
     m_Offset: {x: -9.64, y: 0.2, z: 0}
     m_Scale: {x: 2, y: 2, z: 5}
     m_Orientation: {x: 0, y: 0, z: 0, w: 1}

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 731cc1e617a929843889e6760b5321e5, type: 3}
-  m_Name: SplitLine
+  m_Name: Building_Gas_Station
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_GameObject: {fileID: 100000, guid: 0ee37198b24b2164fbbccfbe92fe5d35, type: 3}
-    m_Offset: {x: -9.64, y: 0.2, z: 0}
-    m_Scale: {x: 2, y: 2, z: 5}
-    m_Orientation: {x: 0, y: 0, z: 0, w: 1}
+  - m_GameObject: {fileID: 100000, guid: 260808cfd9b21994d8c3007a7bc9934c, type: 3}
+    m_Offset: {x: 0, y: 0, z: 0}
+    m_Scale: {x: 1, y: 1, z: 1}
+    m_Orientation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
