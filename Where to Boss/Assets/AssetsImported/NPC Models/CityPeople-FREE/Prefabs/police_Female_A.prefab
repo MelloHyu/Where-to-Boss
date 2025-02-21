@@ -895,6 +895,9 @@ GameObject:
   - component: {fileID: 5067755742887398202}
   - component: {fileID: 1203697140459770176}
   - component: {fileID: 5544880246915493832}
+  - component: {fileID: 7256248313965884615}
+  - component: {fileID: 698854949914867411}
+  - component: {fileID: 7150671441144117356}
   m_Layer: 0
   m_Name: police_Female_A
   m_TagString: Untagged
@@ -953,8 +956,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f141628068b9b4493f69f797f003b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoPlayAnimations: 1
+  AutoPlayAnimations: 0
   PaletteOverride: {fileID: 0}
+--- !u!114 &7256248313965884615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557327951299580288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165989ac68d60b3428a22bb5495b6b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {x: 0, y: 0, z: 0}
+  stopDistance: 2.5
+  reachedDestination: 0
+  lowerSpeedLimit: 1.5
+  upperSpeedLimit: 3
+  movementSpeed: 2
+  rotationSpeed: 180
+--- !u!114 &698854949914867411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557327951299580288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274ad053aa4134d48ad17bd3e89726ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWaypoint: {fileID: 0}
+--- !u!136 &7150671441144117356
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557327951299580288}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.22
+  m_Height: 1.64
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!1 &6265362778501788183
 GameObject:
   m_ObjectHideFlags: 0

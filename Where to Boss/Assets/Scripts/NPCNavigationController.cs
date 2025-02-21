@@ -5,10 +5,17 @@ public class NPCNavigationController : MonoBehaviour
 {
     [SerializeField] private Vector3 destination;
     [SerializeField] private float stopDistance;
-    private bool reachedDestination;
+    public bool reachedDestination;
+    [SerializeField] private float lowerSpeedLimit;
+    [SerializeField] private float upperSpeedLimit;
     [SerializeField] private float movementSpeed;
     [SerializeField] private float rotationSpeed;
 
+
+    private void Start()
+    {
+        movementSpeed = Random.Range(lowerSpeedLimit, upperSpeedLimit);
+    }
     // Update is called once per frame
     void Update()
     {
