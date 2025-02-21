@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SplitLine
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_GameObject: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
-    m_Offset: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
-    m_Orientation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  - m_GameObject: {fileID: 100000, guid: 0ee37198b24b2164fbbccfbe92fe5d35, type: 3}
+    m_Offset: {x: -9.64, y: 0.2, z: 0}
+    m_Scale: {x: 2, y: 2, z: 5}
+    m_Orientation: {x: 0, y: 0, z: 0, w: 1}
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
