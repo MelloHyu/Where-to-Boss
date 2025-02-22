@@ -1065,27 +1065,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf03caffe1bfe346a066532174cf8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brakePower: 5e+12
+  brakePower: 400000000
   steeringCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 1.4881911
-      value: 60.09182
-      inSlope: -0.77467114
-      outSlope: -0.77467114
-      tangentMode: 0
+      time: 0
+      value: 80
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.079268046
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 79.37517
-      value: 21.041798
-      inSlope: -0.445809
-      outSlope: -0.445809
-      tangentMode: 0
+      time: 300
+      value: 80
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.05818606
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1114,8 +1114,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  motorPower: 1000
-  speedToBreakSound: 1
+  motorPower: 1200
+  speedToBreakSound: 20
   carSpeed: 0
   FRWheelcol: {fileID: 8925301758235065317}
   FLWheelcol: {fileID: 2088792337010687948}
@@ -1164,11 +1164,11 @@ AudioSource:
   m_GameObject: {fileID: 6011026916021135456}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fe44e444f1fad5f44bc47c1d8eef8c3c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 574dcacf194b6f948ae21b658d33f336, type: 3}
   m_Resource: {fileID: 8300000, guid: 574dcacf194b6f948ae21b658d33f336, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

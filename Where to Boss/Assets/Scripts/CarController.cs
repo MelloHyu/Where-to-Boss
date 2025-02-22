@@ -77,6 +77,16 @@ public class CarController : MonoBehaviour
         AddMotorPower();
         AddSteering();
         EngineNoise();
+        AdjustWheelFriction();
+        ApplyTurningTorque();
+    }
+    private void ApplyTurningTorque()
+    {
+        if (Mathf.Abs(steeringInput) > 0.1f && carSpeed > 10f) // Only apply at moderate speeds
+        {
+            float torqueStrength = steeringInput * carSpeed * 0.05f;
+            carRB.AddTorque(Vector3.up * torqueStrength, ForceMode.Acceleration);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -113,7 +123,7 @@ public class CarController : MonoBehaviour
 
     private void AddSteering()
     {
-        float steeringAngle = steeringInput * steeringCurve.Evaluate(carSpeed);
+        float steeringAngle = steeringInput * Mathf.Max(steeringCurve.Evaluate(carSpeed), 10f); // Ensure a minimum steer value
         FRWheelcol.steerAngle = steeringAngle;
         FLWheelcol.steerAngle = steeringAngle;
     }
@@ -152,6 +162,16 @@ public class CarController : MonoBehaviour
         {
             brakeInput = 0;
         }
+    }
+
+    private void AdjustWheelFriction()
+    {
+        WheelFrictionCurve friction = RLWheelcol.sidewaysFriction;
+        float frictionFactor = Mathf.Lerp(1f, 0.5f, carSpeed / 50f); // Reduces sideways grip as speed increases
+
+        friction.stiffness = frictionFactor;
+        RLWheelcol.sidewaysFriction = friction;
+        RRWheelcol.sidewaysFriction = friction;
     }
 
     private void UpdateWheelMesh(WheelCollider wheelCollider, MeshRenderer wheelMesh)

@@ -6,20 +6,26 @@ public class MainMenuManager : MonoBehaviour
     public AudioMixer audioMixer;
 
     [SerializeField] private int loadBuildIndexPlay;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     public void Play()
     {
-        SoundManager.PlaySound(SoundManager.Sound.ButtonClick);
+        SoundManager.PlaySound(SoundManager.Sound.ButtonClick, transform.position);
         SceneManager.LoadScene(loadBuildIndexPlay);
     }
 
     public void Settings()
     {
-        SoundManager.PlaySound(SoundManager.Sound.ButtonClick);
+        SoundManager.PlaySound(SoundManager.Sound.ButtonClick, transform.position);
     }
 
     public void Quit()
     {
-        SoundManager.PlaySound(SoundManager.Sound.ButtonClick);
+        SoundManager.PlaySound(SoundManager.Sound.ButtonClick, transform.position);
         Application.Quit();
     }
 
