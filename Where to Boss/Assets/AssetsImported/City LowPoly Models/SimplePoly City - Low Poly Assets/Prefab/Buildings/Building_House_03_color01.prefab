@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 1131593330700506632}
+  - component: {fileID: 1083113982729794440}
+  - component: {fileID: 8003084263851605082}
   m_Layer: 0
   m_Name: Building_House_03_color01
   m_TagString: Untagged
@@ -106,5 +108,47 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 17.255001, y: 9.610818, z: 14.407763}
-  m_Center: {x: -0.07696676, y: 4.7428584, z: -0.17988753}
+  m_Size: {x: 0.69874716, y: 9.610818, z: 0.67621803}
+  m_Center: {x: 2.533808, y: 4.7428584, z: 6.7079773}
+--- !u!65 &1083113982729794440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 17.255001, y: 9.610818, z: 10.400546}
+  m_Center: {x: -0.07696724, y: 4.7428584, z: -2.183496}
+--- !u!65 &8003084263851605082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.69874716, y: 9.610818, z: 0.67621803}
+  m_Center: {x: -2.86, y: 4.7428584, z: 6.7079773}

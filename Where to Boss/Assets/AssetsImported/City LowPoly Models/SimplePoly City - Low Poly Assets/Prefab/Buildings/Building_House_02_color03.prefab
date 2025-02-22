@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  - component: {fileID: 5453079855017904540}
+  - component: {fileID: 926670927696994861}
   m_Layer: 0
   m_Name: Building_House_02_color03
   m_TagString: Untagged
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5453079855017904540
+--- !u!65 &926670927696994861
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,5 +106,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 17.582718, y: 9.043972, z: 13.00732}
-  m_Center: {x: -0.42346716, y: 4.5219393, z: -0.10574341}
+  m_Size: {x: 15.487621, y: 9.043972, z: 9.576373}
+  m_Center: {x: -0.39275742, y: 4.5219393, z: 0.2421794}

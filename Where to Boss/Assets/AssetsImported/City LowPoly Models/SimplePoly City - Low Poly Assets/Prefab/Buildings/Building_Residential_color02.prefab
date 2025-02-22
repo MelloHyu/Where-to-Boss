@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  - component: {fileID: 5499867937699963588}
+  - component: {fileID: 2120638891628876201}
   m_Layer: 0
   m_Name: Building_Residential_color02
   m_TagString: Untagged
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5499867937699963588
+--- !u!65 &2120638891628876201
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,5 +106,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 16.229427, y: 19.239717, z: 12.664908}
-  m_Center: {x: -0.00013637543, y: 9.619859, z: 0.05764866}
+  m_Size: {x: 16.229427, y: 19.239717, z: 11.3438835}
+  m_Center: {x: -0.00013637543, y: 9.619859, z: -0.602864}
