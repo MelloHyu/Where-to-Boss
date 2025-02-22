@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundAssets : MonoBehaviour
 {
+
     public static SoundAssets Instance { get; private set; }
     private void Awake()
     {
@@ -15,6 +17,7 @@ public class SoundAssets : MonoBehaviour
         }
     }
 
+    public AudioMixerGroup audioMixerGroup;
     public SoundAudioClip[] soundAudioClipArray;
 
     [System.Serializable]
