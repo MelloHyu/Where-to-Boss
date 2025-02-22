@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,13 +10,17 @@ public class CarController : MonoBehaviour
     private float brakeInput;
     private PlayerInputActions carControls;
     private InputAction move;
+    private InputAction horn;
     private float slipAngle;
+    private bool isBraking = true;
 
 
     [SerializeField] private float brakePower;
     [SerializeField] private AnimationCurve steeringCurve;
+    [SerializeField] private AnimationCurve EngineCurve;
     [SerializeField] private float motorPower;
-    private float carSpeed;
+    [SerializeField] private float speedToBreakSound;
+    [SerializeField ] private float carSpeed;
 
 
     [Header("Wheel Colliders")]
@@ -36,11 +41,23 @@ public class CarController : MonoBehaviour
     }
     private void OnEnable()
     {
+        horn = carControls.Player.Horn;
         move = carControls.Player.Move;
         move.Enable();
+        horn.Enable();
+
+        horn.performed += Horn_performed;
     }
+
+    private void Horn_performed(InputAction.CallbackContext obj)
+    {
+        //Pressed H
+        SoundManager.PlaySound(SoundManager.Sound.CarHorn, transform.position);
+    }
+
     private void OnDisable()
     {
+        horn.Disable();
         move.Disable();
     }
     void Start()
@@ -59,6 +76,39 @@ public class CarController : MonoBehaviour
         ApplyBrake();
         AddMotorPower();
         AddSteering();
+        EngineNoise();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(carSpeed > 10)
+        SoundManager.PlaySound(SoundManager.Sound.CarCrash, transform.position);
+    }
+
+    private void EngineNoise()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (gasInput >= 1 || gasInput < 0)
+            audioSource.pitch = EngineCurve.Evaluate(carSpeed);
+        else
+            audioSource.pitch = .8f;
+       
+
+        if (brakeInput> 0 && carSpeed > speedToBreakSound && isBraking)
+        {
+            SoundManager.PlaySound(SoundManager.Sound.CarBreak, transform.position);
+            isBraking = false;
+            StartCoroutine(BrakeSoundYield());
+        }
+
+    }
+
+    IEnumerator BrakeSoundYield()
+    {
+        Debug.Log("Started timer");
+        yield return new WaitForSeconds(2.5f);
+        isBraking=true;
+        Debug.Log("Timer ended");
     }
 
     private void AddSteering()
@@ -76,6 +126,8 @@ public class CarController : MonoBehaviour
 
     private void ApplyBrake()
     {
+        
+            
         FRWheelcol.brakeTorque = brakeInput * brakePower * 0.7f;
         FLWheelcol.brakeTorque = brakeInput * brakePower * 0.7f;
 

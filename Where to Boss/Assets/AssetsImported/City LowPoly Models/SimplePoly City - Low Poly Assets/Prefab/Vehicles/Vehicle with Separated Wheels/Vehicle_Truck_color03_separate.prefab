@@ -611,6 +611,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400012}
+  - component: {fileID: 3515786991019948748}
+  - component: {fileID: 4953448903371638615}
   m_Layer: 0
   m_Name: Vehicle_Truck_color03_separate
   m_TagString: Untagged
@@ -640,3 +642,35 @@ Transform:
   - {fileID: 400000}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3515786991019948748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165989ac68d60b3428a22bb5495b6b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {x: 0, y: 0, z: 0}
+  stopDistance: 1.5
+  reachedDestination: 0
+  lowerSpeedLimit: 6
+  upperSpeedLimit: 10
+  movementSpeed: 2
+  rotationSpeed: 120
+--- !u!114 &4953448903371638615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274ad053aa4134d48ad17bd3e89726ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWaypoint: {fileID: 0}
