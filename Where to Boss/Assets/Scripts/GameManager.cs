@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int restartLevel;
-
+    [SerializeField] public AudioSource stageMusic;
     public void RestartLevel()
     {
         SceneManager.LoadScene(restartLevel);
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
         public void StopScoring()
         {
-            
+            stageMusic.Stop();
             isGameRunning = false;
         }
 

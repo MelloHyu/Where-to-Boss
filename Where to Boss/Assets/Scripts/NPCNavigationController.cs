@@ -44,6 +44,13 @@ public class NPCNavigationController : MonoBehaviour
         this.destination = destination;
         reachedDestination = false;
     }
-    
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
 }

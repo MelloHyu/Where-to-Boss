@@ -11,7 +11,11 @@ public static class SoundManager
         CarHorn,
         ButtonClick,
         CarBreak,
-        CarCrash,
+        Crash1,
+        Crash2,
+        Crash3,
+        Crash4,
+        PlayerVoiceLine,
     }
 
     public static void PlaySound(Sound sound, Vector3 position)

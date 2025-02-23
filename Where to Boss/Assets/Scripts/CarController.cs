@@ -13,7 +13,9 @@ public class CarController : MonoBehaviour
     private InputAction horn;
     private float slipAngle;
     private bool isBraking = true;
-
+    private bool isBossSpeaking = true;
+    [SerializeField] private float playerSpeechTimer = 14f;
+    [SerializeField] private float musicKickInTimer = 20f;
 
     [SerializeField] private float brakePower;
     [SerializeField] private AnimationCurve steeringCurve;
@@ -63,6 +65,20 @@ public class CarController : MonoBehaviour
     void Start()
     {
         carRB = gameObject.GetComponent<Rigidbody>();
+        StartCoroutine(SpeechTimer());
+        StartCoroutine(MusicTimer());
+    }
+
+    IEnumerator MusicTimer()
+    {
+        yield return new WaitForSeconds(musicKickInTimer);
+        GameManager.Instance.stageMusic.Play();
+    }
+
+    IEnumerator SpeechTimer()
+    {
+       yield return new WaitForSeconds(playerSpeechTimer);
+       SoundManager.PlaySound(SoundManager.Sound.PlayerVoiceLine, transform.position);
     }
 
     void Update()
@@ -82,7 +98,7 @@ public class CarController : MonoBehaviour
     }
     private void ApplyTurningTorque()
     {
-        if (Mathf.Abs(steeringInput) > 0.1f && carSpeed > 10f) // Only apply at moderate speeds
+        if (Mathf.Abs(steeringInput) > 0.1f && carSpeed > 5f) // Only apply at moderate speeds
         {
             float torqueStrength = steeringInput * carSpeed * 0.05f;
             carRB.AddTorque(Vector3.up * torqueStrength, ForceMode.Acceleration);
@@ -91,8 +107,33 @@ public class CarController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(carSpeed > 10)
-        SoundManager.PlaySound(SoundManager.Sound.CarCrash, transform.position);
+        if (carSpeed > 12f && collision.gameObject.CompareTag("Building") && isBossSpeaking)
+        {
+            int voiceIndex = (int)UnityEngine.Random.Range(1, 4);
+            switch (voiceIndex)
+            {
+                case 1:
+                    SoundManager.PlaySound(SoundManager.Sound.Crash1,transform.position);
+                    break;
+                case 2:
+                    SoundManager.PlaySound(SoundManager.Sound.Crash2, transform.position);
+                    break;
+                case 3:
+                    SoundManager.PlaySound(SoundManager.Sound.Crash3, transform.position);
+                    break;
+                case 4:
+                    SoundManager.PlaySound(SoundManager.Sound.Crash4, transform.position);
+                    break;
+            }
+
+            StartCoroutine(BossLineTimer());
+
+        }
+    }
+
+    IEnumerator BossLineTimer()
+    {
+        yield return new WaitForSeconds(2f);
     }
 
     private void EngineNoise()
@@ -123,7 +164,7 @@ public class CarController : MonoBehaviour
 
     private void AddSteering()
     {
-        float steeringAngle = steeringInput * Mathf.Max(steeringCurve.Evaluate(carSpeed), 10f); // Ensure a minimum steer value
+        float steeringAngle = steeringInput * steeringCurve.Evaluate(carSpeed); // Ensure a minimum steer value
         FRWheelcol.steerAngle = steeringAngle;
         FLWheelcol.steerAngle = steeringAngle;
     }

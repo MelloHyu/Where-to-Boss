@@ -15,7 +15,6 @@ public class MainMenuManager : MonoBehaviour
     public void Play()
     {
         SoundManager.PlaySound(SoundManager.Sound.ButtonClick, transform.position);
-        SceneManager.LoadScene(loadBuildIndexPlay);
     }
 
     public void Settings()
@@ -42,6 +41,12 @@ public class MainMenuManager : MonoBehaviour
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
+    }
+
+    public void StageButtons(int stageIndex)
+    {
+        SoundManager.PlaySound(SoundManager.Sound.ButtonClick, transform.position);
+        SceneManager.LoadScene(stageIndex);
     }
 
 
