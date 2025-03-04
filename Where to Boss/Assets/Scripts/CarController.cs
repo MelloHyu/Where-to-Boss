@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 public class CarController : MonoBehaviour
 {
     private Rigidbody carRB;
@@ -11,6 +12,7 @@ public class CarController : MonoBehaviour
     private PlayerInputActions carControls;
     private InputAction move;
     private InputAction horn;
+    private InputAction home;
     private float slipAngle;
     private bool isBraking = true;
     private bool isBossSpeaking = true;
@@ -45,10 +47,18 @@ public class CarController : MonoBehaviour
     {
         horn = carControls.Player.Horn;
         move = carControls.Player.Move;
+        home = carControls.Player.Home;
+        home.Enable();
         move.Enable();
         horn.Enable();
 
         horn.performed += Horn_performed;
+        home.performed += Home_performed;
+    }
+
+    private void Home_performed(InputAction.CallbackContext obj)
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void Horn_performed(InputAction.CallbackContext obj)
@@ -59,6 +69,7 @@ public class CarController : MonoBehaviour
 
     private void OnDisable()
     {
+        home.Disable();
         horn.Disable();
         move.Disable();
     }
@@ -98,12 +109,20 @@ public class CarController : MonoBehaviour
     }
     private void ApplyTurningTorque()
     {
-        if (Mathf.Abs(steeringInput) > 0.1f && carSpeed > 5f) // Only apply at moderate speeds
+        if (Mathf.Abs(steeringInput) > 0.2f && carSpeed > 5f) // Only apply at moderate speeds
         {
-            float torqueStrength = steeringInput * carSpeed * 0.05f;
+            float torqueStrength = steeringInput * carSpeed * 0.01f;
             carRB.AddTorque(Vector3.up * torqueStrength, ForceMode.Acceleration);
+
+            Vector3 forwardVelocity = Vector3.Project(carRB.linearVelocity, transform.forward);
+            carRB.linearVelocity -= 0.6f * Time.deltaTime * forwardVelocity;
+
+            Vector3 lateralForce = 0.25f * carSpeed * steeringInput * transform.right;
+            carRB.AddForce(lateralForce, ForceMode.Acceleration);
+
         }
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -166,7 +185,10 @@ public class CarController : MonoBehaviour
     {
         float steeringAngle = steeringInput * steeringCurve.Evaluate(carSpeed); // Ensure a minimum steer value
         FRWheelcol.steerAngle = steeringAngle;
+        float rearSteerFactor = 0.2f;
         FLWheelcol.steerAngle = steeringAngle;
+        RRWheelcol.steerAngle = -steeringAngle * rearSteerFactor;
+        RLWheelcol.steerAngle = -steeringAngle * rearSteerFactor;
     }
 
     private void AddMotorPower()

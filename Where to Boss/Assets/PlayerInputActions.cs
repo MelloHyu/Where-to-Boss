@@ -62,6 +62,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Home"",
+                    ""type"": ""Button"",
+                    ""id"": ""78b52556-0600-491c-9ca9-de5080a4163d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -304,6 +313,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Horn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""224b9f48-9a87-409d-8c60-a799e63c41f9"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Home"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8a3cfe8-94ac-48b1-973d-ff23572e00d4"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Home"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -895,6 +926,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Horn = m_Player.FindAction("Horn", throwIfNotFound: true);
+        m_Player_Home = m_Player.FindAction("Home", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -978,6 +1010,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Horn;
+    private readonly InputAction m_Player_Home;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -986,6 +1019,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Horn => m_Wrapper.m_Player_Horn;
+        public InputAction @Home => m_Wrapper.m_Player_Home;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1007,6 +1041,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Horn.started += instance.OnHorn;
             @Horn.performed += instance.OnHorn;
             @Horn.canceled += instance.OnHorn;
+            @Home.started += instance.OnHome;
+            @Home.performed += instance.OnHome;
+            @Home.canceled += instance.OnHome;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1023,6 +1060,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Horn.started -= instance.OnHorn;
             @Horn.performed -= instance.OnHorn;
             @Horn.canceled -= instance.OnHorn;
+            @Home.started -= instance.OnHome;
+            @Home.performed -= instance.OnHome;
+            @Home.canceled -= instance.OnHome;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1209,6 +1249,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnHorn(InputAction.CallbackContext context);
+        void OnHome(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

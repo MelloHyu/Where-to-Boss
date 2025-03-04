@@ -939,7 +939,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.05
+  m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1065,24 +1065,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf03caffe1bfe346a066532174cf8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brakePower: 400000000
+  playerSpeechTimer: 14
+  musicKickInTimer: 20
+  brakePower: 1500
   steeringCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 80
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.13333334
+      outSlope: -0.13333334
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 300
-      value: 80
-      inSlope: 0
-      outSlope: 0
+      value: 40
+      inSlope: -0.13333334
+      outSlope: -0.13333334
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -1400,7 +1402,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.05
+  m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1471,7 +1473,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.05
+  m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -2242,7 +2244,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.05
+  m_SuspensionDistance: 0.06
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -2647,9 +2649,17 @@ PrefabInstance:
       value: 26.828995
       objectReference: {fileID: 0}
     - target: {fileID: 5459872135671498636, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459872135671498636, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5459872135671498636, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d3d7495e99b2c04498b97879fac4388f, type: 2}
     - target: {fileID: 6771298836740240097, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.77905184
