@@ -4,11 +4,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int restartLevel;
     [SerializeField] public AudioSource stageMusic;
     public void RestartLevel()
     {
-        SceneManager.LoadScene(restartLevel);
+        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public static GameManager Instance;
