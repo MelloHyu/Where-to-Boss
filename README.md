@@ -1,5 +1,4 @@
 # Where-to-Boss
-A game project for Brackeys gamejam 2025.1 for the theme "Nothing can go wrong"
 
 
 *Game Design Document*\
@@ -20,8 +19,8 @@ A game project for Brackeys gamejam 2025.1 for the theme "Nothing can go wrong"
 1. *Receive a Destination* – The boss assigns a location.
 2. *Follow the GPS* – But the GPS gives misleading or incorrect directions.
 3. *Navigate Using Road Signs & Landmarks* – Players must manually check signs and surroundings.
-4. *Handle Dynamic Challenges* – Traffic, weather, misleading signs, and police enforcement.
-5. *Reach the Destination* – The boss rates performance based on time, efficiency, and mistakes.
+4. *Handle Dynamic Challenges* – Traffic, misleading signs, blockages, wrong GPS directions.
+5. *Reach the Destination* 
 
 ---
 
@@ -64,7 +63,6 @@ A game project for Brackeys gamejam 2025.1 for the theme "Nothing can go wrong"
 
 - *Visual Style*: Semi-realistic but exaggerated for humor.
 - *Sound Design*:
-  - GPS voice glitches and misdirections.
   - Boss’s voice lines reacting dynamically.
   - City ambiance, traffic sounds, and weather effects (if added later).
 
